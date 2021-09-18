@@ -11,6 +11,8 @@
 		C28C83A226F63DD100240FE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C83A126F63DD100240FE1 /* ContentView.swift */; };
 		C28C83A426F63DD300240FE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28C83A326F63DD300240FE1 /* Assets.xcassets */; };
 		C28C83A726F63DD300240FE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28C83A626F63DD300240FE1 /* Preview Assets.xcassets */; };
+		C28C83AF26F646A400240FE1 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C83AE26F646A400240FE1 /* Word.swift */; };
+		C28C83B326F648BF00240FE1 /* WordPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C83B226F648BF00240FE1 /* WordPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		C28C83A326F63DD300240FE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C28C83A626F63DD300240FE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C28C83A826F63DD300240FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C28C83AE26F646A400240FE1 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		C28C83B226F648BF00240FE1 /* WordPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				C28C839F26F63DD100240FE1 /* WordPositiveApp.swift */,
-				C28C83A126F63DD100240FE1 /* ContentView.swift */,
+				C28C83B026F646A900240FE1 /* Model */,
+				C28C83B126F646B000240FE1 /* View */,
 				C28C83A326F63DD300240FE1 /* Assets.xcassets */,
 				C28C83A826F63DD300240FE1 /* Info.plist */,
 				C28C83A526F63DD300240FE1 /* Preview Content */,
@@ -67,6 +72,23 @@
 				C28C83A626F63DD300240FE1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C28C83B026F646A900240FE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C28C83AE26F646A400240FE1 /* Word.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C28C83B126F646B000240FE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C28C83A126F63DD100240FE1 /* ContentView.swift */,
+				C28C83B226F648BF00240FE1 /* WordPreview.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +162,8 @@
 			files = (
 				C28C83A226F63DD100240FE1 /* ContentView.swift in Sources */,
 				C28C83A026F63DD100240FE1 /* WordPositiveApp.swift in Sources */,
+				C28C83B326F648BF00240FE1 /* WordPreview.swift in Sources */,
+				C28C83AF26F646A400240FE1 /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
