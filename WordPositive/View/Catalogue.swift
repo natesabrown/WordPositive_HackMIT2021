@@ -23,6 +23,8 @@ struct Catalogue: View {
               .padding(.vertical, 3)
           }
         }
+        LinearGradient(gradient: Gradient(colors: [.white, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
+          .zIndex(-1)
       }
       .navigationBarTitle(Text("My Catalogue"))
       .toolbar {

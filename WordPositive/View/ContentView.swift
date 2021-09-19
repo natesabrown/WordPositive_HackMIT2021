@@ -20,6 +20,11 @@ struct ContentView: View {
           Image(systemName: "questionmark")
           Text("Practice")
         }
+      Discover()
+        .tabItem {
+          Image(systemName: "globe")
+          Text("Discover")
+        }
     }
   }
 }

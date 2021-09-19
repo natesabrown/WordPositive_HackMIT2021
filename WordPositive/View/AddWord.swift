@@ -24,7 +24,7 @@ struct AddWord: View {
         HStack {
           TextField("Enter Word", text: $text)
             .padding()
-            .background(Color(.systemGray5).cornerRadius(15))
+            .background(Color(.systemGray5).cornerRadius(15).shadow(radius: 1))
           Button(action: {
             hideKeyboard()
             Word.getWords(text: text.trimmingTrailingSpaces()) { words in
@@ -111,7 +111,15 @@ struct AddWord: View {
         .offset(y: -40)
       }
       
-      NavigationLink(destination: PictureResults(image: image), isActive: $moveNavigation) {
+      
+      NavigationLink(destination: PictureResults(image: image, onWordPress: { wordString in
+        text = wordString
+        Word.getWords(text: text.trimmingTrailingSpaces()) { words in
+          withAnimation {
+            results = words
+          }
+        }
+      }), isActive: $moveNavigation) {
         EmptyView()
       }
     }
@@ -123,6 +131,7 @@ struct AddWord: View {
     .onChange(of: image) { _ in
       self.moveNavigation = true
     }
+      
   }
 }
 
@@ -173,17 +182,17 @@ struct ChoosePreview: View {
   }
 }
 
-struct AddWord_Previews: PreviewProvider {
-  static var previews: some View {
-    Group {
-      NavigationView {
-        AddWord()
-      }
-      Button(action: { }) {
-        ChoosePreview(word: .ExampleWords[0])
-          .padding()
-      }
-      .previewLayout(.sizeThatFits)
-    }
-  }
-}
+//struct AddWord_Previews: PreviewProvider {
+//  static var previews: some View {
+//    Group {
+//      NavigationView {
+//        AddWord()
+//      }
+//      Button(action: { }) {
+//        ChoosePreview(word: .ExampleWords[0])
+//          .padding()
+//      }
+//      .previewLayout(.sizeThatFits)
+//    }
+//  }
+//}

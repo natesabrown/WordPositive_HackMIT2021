@@ -107,6 +107,7 @@ struct PracticeGame: View {
             }
             Spacer()
           }
+          .padding(.bottom)
         }
       }
       .padding(.horizontal)

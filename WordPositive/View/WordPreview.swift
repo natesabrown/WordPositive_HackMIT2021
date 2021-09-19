@@ -55,6 +55,8 @@ struct WordPreview: View {
                 Text("\u{2022} \(example)")
                   .font(.caption)
                   .bold()
+                  .lineLimit(nil)
+                  .frame(maxHeight: .infinity)
                   
                 Spacer()
               }
@@ -86,7 +88,7 @@ struct WordPreview: View {
       }
     }
     .padding()
-    .background(Color.white.cornerRadius(25).shadow(radius: 2))
+    .background(Color.white.cornerRadius(25).opacity(0.8).shadow(radius: 2))
   }
 }
 
