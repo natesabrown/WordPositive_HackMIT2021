@@ -12,6 +12,7 @@ struct PictureResults: View {
   var image: UIImage
   @State var words: [String]? = nil
   @State var doneAnalyzing = false
+  @Binding var sentences: [String]?
   @Environment(\.presentationMode) var presentationMode
   var onWordPress: ((String) -> Void)? = nil
   
@@ -71,9 +72,9 @@ struct PictureResults: View {
         }
       }
     }
-    print(actualWords)
     
     withAnimation {
+      sentences = tentativeWords
       doneAnalyzing = true
       words = Array(Set(actualWords))
     }
@@ -83,7 +84,7 @@ struct PictureResults: View {
 struct PictureResults_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      PictureResults(image: UIImage(named: "example_text")!)
+      PictureResults(image: UIImage(named: "example_text")!, sentences: .constant([]))
     }
   }
 }

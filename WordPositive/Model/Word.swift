@@ -63,6 +63,34 @@ struct Word: Codable, Hashable {
     dataTask.resume()
   }
   
+  static func getDefFromContext(word: String, sentence: String, onComplete: @escaping (String?) -> Void) {
+    let headers = ["word": word, "sentence": sentence]
+    guard let urlToQuery = NSURL(string: "http://127.0.0.1:5000/definition") else { return }
+    let request = NSMutableURLRequest(url: urlToQuery as URL,
+                                      cachePolicy: .useProtocolCachePolicy,
+                                      timeoutInterval: 10.0)
+    request.httpMethod = "GET"
+    request.allHTTPHeaderFields = headers
+    print("Got through request configuration")
+    
+    let session = URLSession.shared
+    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+      if error != nil {
+        print(error as Any)
+      }
+      print("Got here, but might not have any data")
+        
+      guard let data = data else { return }
+      print("Got data \(data)")
+      let responseObject = try? JSONDecoder().decode(String.self, from: data)
+      print("Got this from API call: \(responseObject)")
+      onComplete(responseObject)
+      
+    })
+    
+    dataTask.resume()
+  }
+  
   static func speakWord(word: Word) {
     let utterance = AVSpeechUtterance(string: word.name)
     utterance.voice = AVSpeechSynthesisVoice(language: "en-US")

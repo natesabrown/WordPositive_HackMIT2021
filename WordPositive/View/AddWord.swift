@@ -18,6 +18,8 @@ struct AddWord: View {
   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   @AppStorage("words") var words: [Word] = []
   
+  @State private var sentences: [String]? = nil
+  
   var body: some View {
     ZStack {
       VStack {
@@ -112,13 +114,40 @@ struct AddWord: View {
       }
       
       
-      NavigationLink(destination: PictureResults(image: image, onWordPress: { wordString in
+      NavigationLink(destination: PictureResults(image: image, sentences: $sentences, onWordPress: { wordString in
         text = wordString
+        // get the results
         Word.getWords(text: text.trimmingTrailingSpaces()) { words in
           withAnimation {
             results = words
           }
         }
+        // add a custom result if our API works
+        var ourSentence = ""
+        if (sentences != nil) {
+          for sentence in sentences! {
+            if sentence.contains(text) {
+              print("Got it!")
+              ourSentence = sentence
+            }
+          }
+          
+          print("Got word \(text), sentence \(ourSentence)")
+          Word.getDefFromContext(word: text, sentence: ourSentence) { result in
+            if result != nil {
+              let newWord = Word(
+                name: text,
+                partOfSpeech: "noun",
+                definition: result!,
+                level: 0)
+              if results != nil {
+                results!.append(newWord)
+                print("Done appending.")
+              }
+            }
+          }
+        }
+        
       }), isActive: $moveNavigation) {
         EmptyView()
       }
@@ -182,17 +211,17 @@ struct ChoosePreview: View {
   }
 }
 
-//struct AddWord_Previews: PreviewProvider {
-//  static var previews: some View {
-//    Group {
-//      NavigationView {
-//        AddWord()
-//      }
-//      Button(action: { }) {
-//        ChoosePreview(word: .ExampleWords[0])
-//          .padding()
-//      }
-//      .previewLayout(.sizeThatFits)
-//    }
-//  }
-//}
+struct AddWord_Previews: PreviewProvider {
+  static var previews: some View {
+    Group {
+      NavigationView {
+        AddWord()
+      }
+      Button(action: { }) {
+        ChoosePreview(word: .ExampleWords[0])
+          .padding()
+      }
+      .previewLayout(.sizeThatFits)
+    }
+  }
+}
