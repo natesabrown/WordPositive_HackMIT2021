@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct WordPreview: View {
   var word: Word
   @State private var expanded = false
+  @AppStorage("words") var words: [Word] = []
   
   var body: some View {
-    var level = word.level
-    var levelColor = getColorFromLevel(level: level)
-    
+    let level = word.level
+    let levelColor = Word.getColorFromLevel(level: level)
     
     VStack(alignment: .leading) {
       HStack {
@@ -24,11 +23,7 @@ struct WordPreview: View {
           .bold()
         Spacer()
         Button(action: {
-          // read word title aloud
-          let utterance = AVSpeechUtterance(string: word.name)
-          utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-          let synthesizer = AVSpeechSynthesizer()
-          synthesizer.speak(utterance)
+          Word.speakWord(word: word)
         }) {
           Image(systemName: "speaker.wave.2.circle.fill")
             .font(.title2)
@@ -60,6 +55,7 @@ struct WordPreview: View {
                 Text("\u{2022} \(example)")
                   .font(.caption)
                   .bold()
+                  
                 Spacer()
               }
             }
@@ -78,7 +74,7 @@ struct WordPreview: View {
             .padding(.top, 4)
             Spacer()
             Button(action: {
-              
+              words = words.filter { $0 != word }
             }) {
               Image(systemName: "trash.circle.fill")
                 .foregroundColor(.red)
@@ -92,17 +88,6 @@ struct WordPreview: View {
     .padding()
     .background(Color.white.cornerRadius(25).shadow(radius: 2))
   }
-  
-  func getColorFromLevel(level: Int) -> Color {
-    switch(level) {
-    case 1: return .red
-    case 2: return .orange
-    case 3: return .yellow
-    case 4: return Color.green.opacity(0.5)
-    case 5: return .green
-    default: return .black
-    }
-  }
 }
 
 struct LevelRectangle: View {
@@ -115,6 +100,8 @@ struct LevelRectangle: View {
 
 struct WordPreview_Previews: PreviewProvider {
   static var previews: some View {
-    WordPreview(word: .ExampleWords[0])
+    WordPreview(word: .ExampleWords[3])
+      .padding()
+      .previewLayout(.sizeThatFits)
   }
 }

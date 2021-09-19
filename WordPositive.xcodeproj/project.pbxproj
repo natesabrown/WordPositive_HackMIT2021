@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21E8BF326F696BE008EFEEC /* arrayRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E8BF226F696BE008EFEEC /* arrayRawRepresentable.swift */; };
+		C21E8BF526F69B47008EFEEC /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E8BF426F69B47008EFEEC /* Practice.swift */; };
+		C21FBA0726F6782A00F1135E /* capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FBA0626F6782A00F1135E /* capitalizeFirstLetter.swift */; };
+		C21FBA0926F6822700F1135E /* trimTrailingWhitespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FBA0826F6822700F1135E /* trimTrailingWhitespace.swift */; };
+		C21FBA0B26F6838A00F1135E /* endEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FBA0A26F6838A00F1135E /* endEditing.swift */; };
+		C21FBA0F26F6878E00F1135E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FBA0E26F6878E00F1135E /* ImagePicker.swift */; };
+		C21FBA1126F6889A00F1135E /* PictureResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FBA1026F6889A00F1135E /* PictureResults.swift */; };
+		C2829E7326F663F800F0007A /* Catalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2829E7226F663F800F0007A /* Catalogue.swift */; };
+		C2829E7526F6676F00F0007A /* AddWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2829E7426F6676F00F0007A /* AddWord.swift */; };
+		C283D6D326F69D7A003BACF7 /* PracticeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283D6D226F69D7A003BACF7 /* PracticeGame.swift */; };
 		C28C83A026F63DD100240FE1 /* WordPositiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C839F26F63DD100240FE1 /* WordPositiveApp.swift */; };
 		C28C83A226F63DD100240FE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C83A126F63DD100240FE1 /* ContentView.swift */; };
 		C28C83A426F63DD300240FE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28C83A326F63DD300240FE1 /* Assets.xcassets */; };
@@ -16,6 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C21E8BF226F696BE008EFEEC /* arrayRawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arrayRawRepresentable.swift; sourceTree = "<group>"; };
+		C21E8BF426F69B47008EFEEC /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
+		C21FBA0626F6782A00F1135E /* capitalizeFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capitalizeFirstLetter.swift; sourceTree = "<group>"; };
+		C21FBA0826F6822700F1135E /* trimTrailingWhitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trimTrailingWhitespace.swift; sourceTree = "<group>"; };
+		C21FBA0A26F6838A00F1135E /* endEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endEditing.swift; sourceTree = "<group>"; };
+		C21FBA0E26F6878E00F1135E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C21FBA1026F6889A00F1135E /* PictureResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureResults.swift; sourceTree = "<group>"; };
+		C2829E7226F663F800F0007A /* Catalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalogue.swift; sourceTree = "<group>"; };
+		C2829E7426F6676F00F0007A /* AddWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWord.swift; sourceTree = "<group>"; };
+		C283D6D226F69D7A003BACF7 /* PracticeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeGame.swift; sourceTree = "<group>"; };
 		C28C839C26F63DD100240FE1 /* WordPositive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordPositive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28C839F26F63DD100240FE1 /* WordPositiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPositiveApp.swift; sourceTree = "<group>"; };
 		C28C83A126F63DD100240FE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +57,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C21FBA0526F6781B00F1135E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C21FBA0626F6782A00F1135E /* capitalizeFirstLetter.swift */,
+				C21FBA0826F6822700F1135E /* trimTrailingWhitespace.swift */,
+				C21FBA0A26F6838A00F1135E /* endEditing.swift */,
+				C21E8BF226F696BE008EFEEC /* arrayRawRepresentable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C21FBA1226F68A5C00F1135E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C21FBA0E26F6878E00F1135E /* ImagePicker.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		C28C839326F63DD100240FE1 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +116,7 @@
 		C28C83B026F646A900240FE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C21FBA0526F6781B00F1135E /* Extensions */,
 				C28C83AE26F646A400240FE1 /* Word.swift */,
 			);
 			path = Model;
@@ -86,7 +126,13 @@
 			isa = PBXGroup;
 			children = (
 				C28C83A126F63DD100240FE1 /* ContentView.swift */,
+				C2829E7226F663F800F0007A /* Catalogue.swift */,
 				C28C83B226F648BF00240FE1 /* WordPreview.swift */,
+				C2829E7426F6676F00F0007A /* AddWord.swift */,
+				C21FBA1026F6889A00F1135E /* PictureResults.swift */,
+				C21E8BF426F69B47008EFEEC /* Practice.swift */,
+				C283D6D226F69D7A003BACF7 /* PracticeGame.swift */,
+				C21FBA1226F68A5C00F1135E /* Helper */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,10 +206,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C283D6D326F69D7A003BACF7 /* PracticeGame.swift in Sources */,
+				C21E8BF526F69B47008EFEEC /* Practice.swift in Sources */,
+				C21FBA0726F6782A00F1135E /* capitalizeFirstLetter.swift in Sources */,
 				C28C83A226F63DD100240FE1 /* ContentView.swift in Sources */,
+				C21FBA0926F6822700F1135E /* trimTrailingWhitespace.swift in Sources */,
+				C2829E7526F6676F00F0007A /* AddWord.swift in Sources */,
+				C21FBA1126F6889A00F1135E /* PictureResults.swift in Sources */,
 				C28C83A026F63DD100240FE1 /* WordPositiveApp.swift in Sources */,
 				C28C83B326F648BF00240FE1 /* WordPreview.swift in Sources */,
+				C21E8BF326F696BE008EFEEC /* arrayRawRepresentable.swift in Sources */,
+				C21FBA0F26F6878E00F1135E /* ImagePicker.swift in Sources */,
 				C28C83AF26F646A400240FE1 /* Word.swift in Sources */,
+				C21FBA0B26F6838A00F1135E /* endEditing.swift in Sources */,
+				C2829E7326F663F800F0007A /* Catalogue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
